@@ -23,12 +23,21 @@ namespace Office365Contact.Utils
     {
         private static string _clientId = ConfigurationManager.AppSettings["ida:ClientId"] ?? ConfigurationManager.AppSettings["ida:ClientID"];
         private static string _appKey = ConfigurationManager.AppSettings["ida:ClientSecret"] ?? ConfigurationManager.AppSettings["ida:Password"];
+        private static string _tenantId = ConfigurationManager.AppSettings["ida:TenantId"];
 
         private static string _authorizationUri = "https://login.windows.net";
         private static string _graphResourceId = "https://graph.windows.net";
         private static string _authority = "https://login.windows.net/common/";
         private static string _discoverySvcResourceId = "https://api.office.com/discovery/";
         private static string _discoverySvcEndpointUri = "https://api.office.com/discovery/v1.0/me/";
+
+        public static string TenantId
+        {
+            get
+            {
+                return _tenantId;
+            }
+        }
 
         public static string ClientId
         {
